@@ -1,0 +1,1046 @@
+====== INIT ======
+timestamp_ms: 1789432026962
+manifest_tables: 0
+manifest_epoch: 0
+wal_records_replayed: 60
+version_published: 1
+config:
+  {
+    "data_dir": "./data",
+    "memtable_max_bytes": 256,
+    "max_immutable_tables": 4,
+    "memtable_size_overhead_bytes_per_entry": 32,
+    "rotation_cooldown_ms": 0,
+    "block_size": 64,
+    "bloom_false_positive": 0.01,
+    "wal_fsync_every_n": 1,
+    "wal_segment_roll_bytes": 1024,
+    "compression": "off",
+    "log_level": "info",
+    "sst_dir": "./data/sst/",
+    "restart_interval": 16,
+    "max_build_buffer_mb": 32,
+    "block_cache_mb": 64,
+    "cache_index_blocks": true,
+    "max_open_files": 1024,
+    "manifest_path": "data/manifest.json",
+    "publish_log_level": "info",
+    "event_log_path": "./data/events.log",
+    "size_tiered_fan_in": 2,
+    "size_tiered_size_ratio": 2.0,
+    "tombstone_grace_seconds": 86400,
+    "compaction_max_concurrent": 1,
+    "compaction_io_mb_per_s": 0,
+    "l0_compaction_trigger": 3,
+    "l0_stop_writes": 20,
+    "bg_tick_ms": 100,
+    "shutdown_timeout_ms": 5000
+  }
+
+====== FLUSH ======
+timestamp_ms: 1789432026977
+sstable_id: 0
+file_name: 000000.sst
+entries: 8
+min_key: K
+max_key: a7
+min_seq_no: 1
+max_seq_no: 8
+file_size_bytes: 294
+manifest_epoch: 2
+wal_watermark: 8
+opened_immediately: true
+
+====== FLUSH ======
+timestamp_ms: 1789432026997
+sstable_id: 1
+file_name: 000001.sst
+entries: 7
+min_key: K
+max_key: user:1:prezime
+min_seq_no: 9
+max_seq_no: 26
+file_size_bytes: 300
+manifest_epoch: 3
+wal_watermark: 26
+opened_immediately: true
+
+====== FLUSH ======
+timestamp_ms: 1789432027015
+sstable_id: 2
+file_name: 000002.sst
+entries: 5
+min_key: user:1:zanimanje
+max_key: user:3:ime
+min_seq_no: 27
+max_seq_no: 31
+file_size_bytes: 390
+manifest_epoch: 4
+wal_watermark: 31
+opened_immediately: true
+
+====== FLUSH ======
+timestamp_ms: 1789432027033
+sstable_id: 3
+file_name: 000003.sst
+entries: 5
+min_key: grad:1:drzava
+max_key: user:3:zanimanje
+min_seq_no: 32
+max_seq_no: 36
+file_size_bytes: 403
+manifest_epoch: 5
+wal_watermark: 36
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432027051
+job_id: 1
+input_ids: [0, 1]
+output_id: 4
+output_file: 000004.sst
+bytes_in: 594
+bytes_out: 491
+keys_in: 15
+keys_out: 14
+keys_dropped: 1
+tombstones_kept: 2
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000000.sst", "000001.sst"]
+manifest_epoch: 6
+duration_ms: 17
+
+====== COMPACTION ======
+timestamp_ms: 1789432027061
+job_id: 2
+input_ids: [2, 3]
+output_id: 5
+output_file: 000005.sst
+bytes_in: 793
+bytes_out: 638
+keys_in: 10
+keys_out: 10
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000002.sst", "000003.sst"]
+manifest_epoch: 7
+duration_ms: 8
+
+====== ROTATE ======
+timestamp_ms: 1789432129870
+trigger: memtable_max_bytes_reached
+active_size_bytes: 413
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 5
+published_epoch: 8
+
+====== FLUSH ======
+timestamp_ms: 1789432129895
+sstable_id: 6
+file_name: 000006.sst
+entries: 8
+min_key: config:maintenance_mode
+max_key: user:1:ime
+min_seq_no: 37
+max_seq_no: 61
+file_size_bytes: 532
+manifest_epoch: 9
+wal_watermark: 61
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432129919
+job_id: 3
+input_ids: [4, 6]
+output_id: 7
+output_file: 000007.sst
+bytes_in: 1023
+bytes_out: 899
+keys_in: 22
+keys_out: 21
+keys_dropped: 1
+tombstones_kept: 2
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000004.sst", "000006.sst"]
+manifest_epoch: 10
+duration_ms: 19
+
+====== ROTATE ======
+timestamp_ms: 1789432130476
+trigger: memtable_max_bytes_reached
+active_size_bytes: 264
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 6
+published_epoch: 11
+
+====== FLUSH ======
+timestamp_ms: 1789432130493
+sstable_id: 8
+file_name: 000008.sst
+entries: 5
+min_key: user:1:prezime
+max_key: user:2:zanimanje
+min_seq_no: 62
+max_seq_no: 66
+file_size_bytes: 390
+manifest_epoch: 12
+wal_watermark: 66
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432130513
+job_id: 4
+input_ids: [8, 5]
+output_id: 9
+output_file: 000009.sst
+bytes_in: 1028
+bytes_out: 719
+keys_in: 15
+keys_out: 11
+keys_dropped: 4
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000008.sst", "000005.sst"]
+manifest_epoch: 13
+duration_ms: 18
+
+====== ROTATE ======
+timestamp_ms: 1789432131228
+trigger: memtable_max_bytes_reached
+active_size_bytes: 266
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 7
+published_epoch: 14
+
+====== FLUSH ======
+timestamp_ms: 1789432131237
+sstable_id: 10
+file_name: 000010.sst
+entries: 5
+min_key: grad:1:drzava
+max_key: user:3:zanimanje
+min_seq_no: 67
+max_seq_no: 71
+file_size_bytes: 391
+manifest_epoch: 15
+wal_watermark: 71
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432131254
+job_id: 5
+input_ids: [10, 9]
+output_id: 11
+output_file: 000011.sst
+bytes_in: 1110
+bytes_out: 719
+keys_in: 16
+keys_out: 11
+keys_dropped: 5
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000010.sst", "000009.sst"]
+manifest_epoch: 16
+duration_ms: 16
+
+====== ROTATE ======
+timestamp_ms: 1789432132064
+trigger: memtable_max_bytes_reached
+active_size_bytes: 306
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 8
+published_epoch: 17
+
+====== FLUSH ======
+timestamp_ms: 1789432132080
+sstable_id: 12
+file_name: 000012.sst
+entries: 6
+min_key: config:max_users
+max_key: grad:3:naziv
+min_seq_no: 72
+max_seq_no: 77
+file_size_bytes: 407
+manifest_epoch: 18
+wal_watermark: 77
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432132093
+job_id: 6
+input_ids: [12, 11]
+output_id: 13
+output_file: 000013.sst
+bytes_in: 1126
+bytes_out: 952
+keys_in: 17
+keys_out: 16
+keys_dropped: 1
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000012.sst", "000011.sst"]
+manifest_epoch: 19
+duration_ms: 12
+
+====== ROTATE ======
+timestamp_ms: 1789432132680
+trigger: memtable_max_bytes_reached
+active_size_bytes: 297
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 9
+published_epoch: 20
+
+====== FLUSH ======
+timestamp_ms: 1789432132697
+sstable_id: 14
+file_name: 000014.sst
+entries: 5
+min_key: config:maintenance_mode
+max_key: session:xyz123:status
+min_seq_no: 78
+max_seq_no: 82
+file_size_bytes: 447
+manifest_epoch: 21
+wal_watermark: 82
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432132714
+job_id: 7
+input_ids: [7, 13]
+output_id: 15
+output_file: 000015.sst
+bytes_in: 1851
+bytes_out: 1438
+keys_in: 37
+keys_out: 31
+keys_dropped: 6
+tombstones_kept: 2
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000007.sst", "000013.sst"]
+manifest_epoch: 22
+duration_ms: 15
+
+====== ROTATE ======
+timestamp_ms: 1789432133294
+trigger: memtable_max_bytes_reached
+active_size_bytes: 286
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 10
+published_epoch: 23
+
+====== FLUSH ======
+timestamp_ms: 1789432133307
+sstable_id: 16
+file_name: 000016.sst
+entries: 5
+min_key: sensor:temp:indoor
+max_key: stat:visits:2023-10-03
+min_seq_no: 83
+max_seq_no: 87
+file_size_bytes: 415
+manifest_epoch: 24
+wal_watermark: 87
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432133319
+job_id: 8
+input_ids: [16, 14]
+output_id: 17
+output_file: 000017.sst
+bytes_in: 862
+bytes_out: 707
+keys_in: 10
+keys_out: 10
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000016.sst", "000014.sst"]
+manifest_epoch: 25
+duration_ms: 10
+
+====== ROTATE ======
+timestamp_ms: 1789432133850
+trigger: memtable_max_bytes_reached
+active_size_bytes: 273
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 11
+published_epoch: 26
+
+====== FLUSH ======
+timestamp_ms: 1789432133870
+sstable_id: 18
+file_name: 000018.sst
+entries: 5
+min_key: proizvod:101:cena
+max_key: sensor:humidity:indoor
+min_seq_no: 88
+max_seq_no: 92
+file_size_bytes: 403
+manifest_epoch: 27
+wal_watermark: 92
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432133889
+job_id: 9
+input_ids: [18, 17]
+output_id: 19
+output_file: 000019.sst
+bytes_in: 1110
+bytes_out: 1015
+keys_in: 15
+keys_out: 15
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000018.sst", "000017.sst"]
+manifest_epoch: 28
+duration_ms: 18
+
+====== ROTATE ======
+timestamp_ms: 1789432259550
+trigger: memtable_max_bytes_reached
+active_size_bytes: 260
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 12
+published_epoch: 29
+
+====== FLUSH ======
+timestamp_ms: 1789432259565
+sstable_id: 20
+file_name: 000020.sst
+entries: 5
+min_key: app:author
+max_key: user:1:ime
+min_seq_no: 93
+max_seq_no: 97
+file_size_bytes: 380
+manifest_epoch: 30
+wal_watermark: 97
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432259587
+job_id: 10
+input_ids: [19, 15]
+output_id: 21
+output_file: 000021.sst
+bytes_in: 2453
+bytes_out: 2184
+keys_in: 46
+keys_out: 44
+keys_dropped: 2
+tombstones_kept: 2
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000019.sst", "000015.sst"]
+manifest_epoch: 31
+duration_ms: 21
+
+====== ROTATE ======
+timestamp_ms: 1789432260150
+trigger: memtable_max_bytes_reached
+active_size_bytes: 264
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 13
+published_epoch: 32
+
+====== FLUSH ======
+timestamp_ms: 1789432260162
+sstable_id: 22
+file_name: 000022.sst
+entries: 5
+min_key: user:1:prezime
+max_key: user:2:zanimanje
+min_seq_no: 98
+max_seq_no: 102
+file_size_bytes: 390
+manifest_epoch: 33
+wal_watermark: 102
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432260183
+job_id: 11
+input_ids: [20, 22]
+output_id: 23
+output_file: 000023.sst
+bytes_in: 770
+bytes_out: 623
+keys_in: 10
+keys_out: 10
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000020.sst", "000022.sst"]
+manifest_epoch: 34
+duration_ms: 19
+
+====== ROTATE ======
+timestamp_ms: 1789432260759
+trigger: memtable_max_bytes_reached
+active_size_bytes: 266
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 14
+published_epoch: 35
+
+====== FLUSH ======
+timestamp_ms: 1789432260777
+sstable_id: 24
+file_name: 000024.sst
+entries: 5
+min_key: grad:1:drzava
+max_key: user:3:zanimanje
+min_seq_no: 103
+max_seq_no: 107
+file_size_bytes: 391
+manifest_epoch: 36
+wal_watermark: 107
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432260794
+job_id: 12
+input_ids: [24, 23]
+output_id: 25
+output_file: 000025.sst
+bytes_in: 1014
+bytes_out: 916
+keys_in: 15
+keys_out: 15
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000024.sst", "000023.sst"]
+manifest_epoch: 37
+duration_ms: 16
+
+====== ROTATE ======
+timestamp_ms: 1789432261564
+trigger: memtable_max_bytes_reached
+active_size_bytes: 306
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 15
+published_epoch: 38
+
+====== FLUSH ======
+timestamp_ms: 1789432261580
+sstable_id: 26
+file_name: 000026.sst
+entries: 6
+min_key: config:max_users
+max_key: grad:3:naziv
+min_seq_no: 108
+max_seq_no: 113
+file_size_bytes: 407
+manifest_epoch: 39
+wal_watermark: 113
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432261599
+job_id: 13
+input_ids: [26, 25]
+output_id: 27
+output_file: 000027.sst
+bytes_in: 1323
+bytes_out: 1197
+keys_in: 21
+keys_out: 21
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000026.sst", "000025.sst"]
+manifest_epoch: 40
+duration_ms: 17
+
+====== ROTATE ======
+timestamp_ms: 1789432262149
+trigger: memtable_max_bytes_reached
+active_size_bytes: 297
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 16
+published_epoch: 41
+
+====== FLUSH ======
+timestamp_ms: 1789432262166
+sstable_id: 28
+file_name: 000028.sst
+entries: 5
+min_key: config:maintenance_mode
+max_key: session:xyz123:status
+min_seq_no: 114
+max_seq_no: 118
+file_size_bytes: 447
+manifest_epoch: 42
+wal_watermark: 118
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432262181
+job_id: 14
+input_ids: [27, 21]
+output_id: 29
+output_file: 000029.sst
+bytes_in: 3381
+bytes_out: 2399
+keys_in: 65
+keys_out: 48
+keys_dropped: 17
+tombstones_kept: 2
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000027.sst", "000021.sst"]
+manifest_epoch: 43
+duration_ms: 14
+
+====== ROTATE ======
+timestamp_ms: 1789432262725
+trigger: memtable_max_bytes_reached
+active_size_bytes: 286
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 17
+published_epoch: 44
+
+====== FLUSH ======
+timestamp_ms: 1789432262733
+sstable_id: 30
+file_name: 000030.sst
+entries: 5
+min_key: sensor:temp:indoor
+max_key: stat:visits:2023-10-03
+min_seq_no: 119
+max_seq_no: 123
+file_size_bytes: 415
+manifest_epoch: 45
+wal_watermark: 123
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432262745
+job_id: 15
+input_ids: [30, 28]
+output_id: 31
+output_file: 000031.sst
+bytes_in: 862
+bytes_out: 707
+keys_in: 10
+keys_out: 10
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000030.sst", "000028.sst"]
+manifest_epoch: 46
+duration_ms: 11
+
+====== ROTATE ======
+timestamp_ms: 1789432263301
+trigger: memtable_max_bytes_reached
+active_size_bytes: 273
+memtable_max_bytes: 256
+immutables_pending: 1
+flush_requested_count: 18
+published_epoch: 47
+
+====== FLUSH ======
+timestamp_ms: 1789432263318
+sstable_id: 32
+file_name: 000032.sst
+entries: 5
+min_key: proizvod:101:cena
+max_key: sensor:humidity:indoor
+min_seq_no: 124
+max_seq_no: 128
+file_size_bytes: 403
+manifest_epoch: 48
+wal_watermark: 128
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789432263333
+job_id: 16
+input_ids: [32, 31]
+output_id: 33
+output_file: 000033.sst
+bytes_in: 1110
+bytes_out: 1015
+keys_in: 15
+keys_out: 15
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000032.sst", "000031.sst"]
+manifest_epoch: 49
+duration_ms: 13
+
+====== SHUTDOWN_BEGIN ======
+timestamp_ms: 1789433231049
+mode: graceful
+
+====== SHUTDOWN_COMPLETE ======
+timestamp_ms: 1789433231049
+mode: graceful
+
+====== INIT ======
+timestamp_ms: 1789433236569
+manifest_tables: 2
+manifest_epoch: 49
+wal_records_replayed: 6
+version_published: 50
+config:
+  {
+    "data_dir": "./data",
+    "memtable_max_bytes": 256,
+    "max_immutable_tables": 4,
+    "memtable_size_overhead_bytes_per_entry": 32,
+    "rotation_cooldown_ms": 0,
+    "block_size": 64,
+    "bloom_false_positive": 0.01,
+    "wal_fsync_every_n": 1,
+    "wal_segment_roll_bytes": 1024,
+    "compression": "off",
+    "log_level": "info",
+    "sst_dir": "./data/sst/",
+    "restart_interval": 16,
+    "max_build_buffer_mb": 32,
+    "block_cache_mb": 64,
+    "cache_index_blocks": true,
+    "max_open_files": 1024,
+    "manifest_path": "data/manifest.json",
+    "publish_log_level": "info",
+    "event_log_path": "./data/events.log",
+    "size_tiered_fan_in": 2,
+    "size_tiered_size_ratio": 2.0,
+    "tombstone_grace_seconds": 86400,
+    "compaction_max_concurrent": 1,
+    "compaction_io_mb_per_s": 0,
+    "l0_compaction_trigger": 3,
+    "l0_stop_writes": 20,
+    "bg_tick_ms": 100,
+    "shutdown_timeout_ms": 5000
+  }
+
+====== FLUSH ======
+timestamp_ms: 1789433236585
+sstable_id: 34
+file_name: 000034.sst
+entries: 5
+min_key: app:version
+max_key: proizvod:103:naziv
+min_seq_no: 127
+max_seq_no: 131
+file_size_bytes: 402
+manifest_epoch: 51
+wal_watermark: 131
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789433236597
+job_id: 1
+input_ids: [34, 33]
+output_id: 35
+output_file: 000035.sst
+bytes_in: 1417
+bytes_out: 1163
+keys_in: 20
+keys_out: 18
+keys_dropped: 2
+tombstones_kept: 0
+tombstones_dropped: 0
+deleted_input_files: []
+deferred_input_files: ["000034.sst", "000033.sst"]
+manifest_epoch: 52
+duration_ms: 12
+
+====== INIT ======
+timestamp_ms: 1789521724184
+manifest_tables: 2
+manifest_epoch: 52
+wal_records_replayed: 6
+version_published: 53
+config:
+  {
+    "data_dir": "./data",
+    "memtable_max_bytes": 67108864,
+    "max_immutable_tables": 4,
+    "memtable_size_overhead_bytes_per_entry": 32,
+    "rotation_cooldown_ms": 0,
+    "block_size": 8192,
+    "bloom_false_positive": 0.01,
+    "wal_fsync_every_n": 1,
+    "wal_segment_roll_bytes": 134217728,
+    "compression": "off",
+    "log_level": "info",
+    "sst_dir": "data/sst",
+    "restart_interval": 16,
+    "max_build_buffer_mb": 32,
+    "block_cache_mb": 64,
+    "cache_index_blocks": true,
+    "max_open_files": 1024,
+    "manifest_path": "data/manifest.json",
+    "publish_log_level": "info",
+    "event_log_path": "data/events.log",
+    "size_tiered_fan_in": 4,
+    "size_tiered_size_ratio": 2.0,
+    "tombstone_grace_seconds": 86400,
+    "compaction_max_concurrent": 1,
+    "compaction_io_mb_per_s": 0,
+    "l0_compaction_trigger": 8,
+    "l0_stop_writes": 20,
+    "bg_tick_ms": 500,
+    "shutdown_timeout_ms": 5000
+  }
+
+====== SHUTDOWN_BEGIN ======
+timestamp_ms: 1789521775040
+mode: fast
+
+====== SHUTDOWN_COMPLETE ======
+timestamp_ms: 1789521775040
+mode: fast
+
+====== INIT ======
+timestamp_ms: 1789521783960
+manifest_tables: 2
+manifest_epoch: 52
+wal_records_replayed: 26
+version_published: 53
+config:
+  {
+    "data_dir": "./data",
+    "memtable_max_bytes": 256,
+    "max_immutable_tables": 4,
+    "memtable_size_overhead_bytes_per_entry": 32,
+    "rotation_cooldown_ms": 0,
+    "block_size": 64,
+    "bloom_false_positive": 0.01,
+    "wal_fsync_every_n": 1,
+    "wal_segment_roll_bytes": 1024,
+    "compression": "off",
+    "log_level": "info",
+    "sst_dir": "./data/sst/",
+    "restart_interval": 16,
+    "max_build_buffer_mb": 32,
+    "block_cache_mb": 64,
+    "cache_index_blocks": true,
+    "max_open_files": 1024,
+    "manifest_path": "data/manifest.json",
+    "publish_log_level": "info",
+    "event_log_path": "./data/events.log",
+    "size_tiered_fan_in": 2,
+    "size_tiered_size_ratio": 2.0,
+    "tombstone_grace_seconds": 30,
+    "compaction_max_concurrent": 1,
+    "compaction_io_mb_per_s": 0,
+    "l0_compaction_trigger": 3,
+    "l0_stop_writes": 20,
+    "bg_tick_ms": 100,
+    "shutdown_timeout_ms": 5000
+  }
+
+====== FLUSH ======
+timestamp_ms: 1789521783971
+sstable_id: 36
+file_name: 000036.sst
+entries: 5
+min_key: app:version
+max_key: proizvod:103:naziv
+min_seq_no: 127
+max_seq_no: 131
+file_size_bytes: 402
+manifest_epoch: 54
+wal_watermark: 131
+opened_immediately: true
+
+====== FLUSH ======
+timestamp_ms: 1789521783979
+sstable_id: 37
+file_name: 000037.sst
+entries: 5
+min_key: app:author
+max_key: user:1004
+min_seq_no: 132
+max_seq_no: 136
+file_size_bytes: 390
+manifest_epoch: 55
+wal_watermark: 136
+opened_immediately: true
+
+====== FLUSH ======
+timestamp_ms: 1789521783991
+sstable_id: 38
+file_name: 000038.sst
+entries: 5
+min_key: order:5001
+max_key: product:203
+min_seq_no: 137
+max_seq_no: 141
+file_size_bytes: 415
+manifest_epoch: 56
+wal_watermark: 141
+opened_immediately: true
+
+====== FLUSH ======
+timestamp_ms: 1789521784007
+sstable_id: 39
+file_name: 000039.sst
+entries: 4
+min_key: order:5002
+max_key: session:def456
+min_seq_no: 142
+max_seq_no: 145
+file_size_bytes: 439
+manifest_epoch: 57
+wal_watermark: 145
+opened_immediately: true
+
+====== COMPACTION ======
+timestamp_ms: 1789521784019
+job_id: 1
+input_ids: [37, 36]
+output_id: 40
+output_file: 000040.sst
+bytes_in: 792
+bytes_out: 620
+keys_in: 10
+keys_out: 10
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+retired_input_files: ["000037.sst", "000036.sst"]
+cleanup_grace_seconds: 30
+manifest_epoch: 58
+duration_ms: 11
+
+====== COMPACTION ======
+timestamp_ms: 1789521784035
+job_id: 2
+input_ids: [38, 39]
+output_id: 41
+output_file: 000041.sst
+bytes_in: 854
+bytes_out: 707
+keys_in: 9
+keys_out: 9
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+retired_input_files: ["000038.sst", "000039.sst"]
+cleanup_grace_seconds: 30
+manifest_epoch: 59
+duration_ms: 14
+
+====== COMPACTION ======
+timestamp_ms: 1789521784044
+job_id: 3
+input_ids: [40, 41]
+output_id: 42
+output_file: 000042.sst
+bytes_in: 1327
+bytes_out: 1245
+keys_in: 19
+keys_out: 19
+keys_dropped: 0
+tombstones_kept: 0
+tombstones_dropped: 0
+retired_input_files: ["000040.sst", "000041.sst"]
+cleanup_grace_seconds: 30
+manifest_epoch: 60
+duration_ms: 8
+
+====== COMPACTION ======
+timestamp_ms: 1789521784059
+job_id: 4
+input_ids: [35, 42]
+output_id: 43
+output_file: 000043.sst
+bytes_in: 2408
+bytes_out: 2058
+keys_in: 37
+keys_out: 32
+keys_dropped: 5
+tombstones_kept: 0
+tombstones_dropped: 0
+retired_input_files: ["000035.sst", "000042.sst"]
+cleanup_grace_seconds: 30
+manifest_epoch: 61
+duration_ms: 14
+
+====== DEFERRED_SST_DELETED ======
+timestamp_ms: 1789521814121
+file_name: 000037.sst
+waited_secs: 30
+
+====== DEFERRED_SST_DELETED ======
+timestamp_ms: 1789521814122
+file_name: 000036.sst
+waited_secs: 30
+
+====== DEFERRED_SST_DELETED ======
+timestamp_ms: 1789521814122
+file_name: 000038.sst
+waited_secs: 30
+
+====== DEFERRED_SST_DELETED ======
+timestamp_ms: 1789521814122
+file_name: 000039.sst
+waited_secs: 30
+
+====== DEFERRED_SST_DELETED ======
+timestamp_ms: 1789521814123
+file_name: 000040.sst
+waited_secs: 30
+
+====== DEFERRED_SST_DELETED ======
+timestamp_ms: 1789521814123
+file_name: 000041.sst
+waited_secs: 30
+
+====== DEFERRED_SST_DELETED ======
+timestamp_ms: 1789521814123
+file_name: 000035.sst
+waited_secs: 30
+
+====== DEFERRED_SST_DELETED ======
+timestamp_ms: 1789521814123
+file_name: 000042.sst
+waited_secs: 30
+
+====== SHUTDOWN_BEGIN ======
+timestamp_ms: 1789521911258
+mode: graceful
+
+====== SHUTDOWN_COMPLETE ======
+timestamp_ms: 1789521911258
+mode: graceful
+

@@ -1,0 +1,40 @@
+{
+  "manifest_version": 1,
+  "epoch": 61,
+  "next_sst_id": 44,
+  "tables": [
+    {
+      "id": 43,
+      "file_name": "000043.sst",
+      "min_key": "app:author",
+      "max_key": "user:1004",
+      "min_seq_no": 114,
+      "max_seq_no": 145,
+      "created_at": 1789521784,
+      "file_size": 2058,
+      "num_entries": 32,
+      "bloom_params": {
+        "num_bits": 312,
+        "num_hashes": 7,
+        "false_positive_rate": 0.01
+      }
+    },
+    {
+      "id": 29,
+      "file_name": "000029.sst",
+      "min_key": "K",
+      "max_key": "user:3:zanimanje",
+      "min_seq_no": 1,
+      "max_seq_no": 113,
+      "created_at": 1789432262,
+      "file_size": 2399,
+      "num_entries": 48,
+      "bloom_params": {
+        "num_bits": 464,
+        "num_hashes": 7,
+        "false_positive_rate": 0.01
+      }
+    }
+  ],
+  "flushed_seq_no_watermark": 145
+}
